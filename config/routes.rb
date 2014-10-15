@@ -53,4 +53,7 @@ WineReview::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get "/wines" => "wines#index", as: "wines"
+  get "/wines/:id" => "wines#show", as: "wine"
 end

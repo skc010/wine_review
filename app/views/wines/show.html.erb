@@ -9,4 +9,4 @@
 	<p><label>Varietal</label> <%= @wine.varietal %></p>
 </article>
 
-<%= link_to("All wines", wines_path) %>
+<%= link_to("All wines", wines_path) %> | <%= link_to('Edit', edit_wine_path(@wine)) %> <%= button_to('Delete', @wine, method: :delete, data: {confirm: 'Are you sure you want to delete?'}) %>

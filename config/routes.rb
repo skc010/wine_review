@@ -54,8 +54,5 @@ WineReview::Application.routes.draw do
   #     resources :products
   #   end
 
-  get "/wines" => "wines#index", as: "wines"
-  get "/wines/new" => "wines#new", as: "new_wine"
-  get "/wines/:id" => "wines#show", as: "wine"
-  post '/wines' => 'wines#create'
+  resources :wines
 end

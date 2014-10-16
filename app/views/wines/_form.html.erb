@@ -1,4 +1,5 @@
 <%= form_for(@wine) do |f| %>
+	<%= render 'shared/validation_errors', object: @author %>
 	<%= f.label :name %> <%= f.text_field :name, auto_focus: true %><br />
 	<%= f.label :year %> <%= f.text_field :year %><br />
 	<%= f.label :winery %> <%= f.text_field :winery %><br />

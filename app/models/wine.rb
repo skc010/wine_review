@@ -1,6 +1,6 @@
 class Wine < ActiveRecord::Base
 	VARIETALS = ['Cabernet Sauvigon', 'Chardonnay', 'Cantena', 'Merlot', 'Chianti']
-	validates :name, :year, :country
+	validates :name, :year, :country, presence: true
 	validates :year,
 		numericality: { only_integer: true}
 	validates :varietal,

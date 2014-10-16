@@ -8,13 +8,13 @@ class WinesController < ApplicationController
 	def create
 		@wine = Wine.new(wine_params)
 		if @wine.save
-			redirect_to(@wine)
+			redirect_to(@wine, notice: "#{@wine.name} was created!")
 		else
 			render :new
 		end
 	end
 	def index
-  		@wines = Wine.all
+  		@wines = Wine.order(:name).page(params[:page])
 	end
 
 	def show
@@ -25,7 +25,7 @@ class WinesController < ApplicationController
 
 	def update
 		if @wine.update(wine_params)
-			redirect_to(@wine)
+			redirect_to(@wine, notice: "#{@wine.name} was updated!")
 		else
 			render :new
 		end

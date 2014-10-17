@@ -8,6 +8,13 @@
 	<p><label>Country: </label><%= @wine.country %></p>
 
 	<p><label>Varietal</label> <%= @wine.varietal %></p>
+	<p><label><%= format_average_ratings(@wine) %></label></p>
 </article>
+
+<p>
+  Read all
+  <%= link_to pluralize(@wine.log_entries.size, 'Log Entry'), 
+                        wine_log_entries_path(@wine) %>
+</p>
 
 <%= link_to("All wines", wines_path) %> | <%= link_to('Edit', edit_wine_path(@wine)) %> <%= button_to('Delete', @wine, method: :delete, data: {confirm: 'Are you sure you want to delete?'}) %>

@@ -6,4 +6,5 @@ class Wine < ActiveRecord::Base
 	validates :varietal,
 		inclusion: {in: VARIETALS, message: "%{value} is not a valid varietal"}
 
+	has_many: LogEntries
 end

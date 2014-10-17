@@ -2,7 +2,7 @@
 <ol id="reviews">
   <% @log_entries.each do |review| %>
     <li>
-      <span class="review"><%= pluralize(review.rating, 'rating') %></span>
+      <span class="review"><%= pluralize(review.rating, 'stars') %></span>
       <span class="user">by <%= review.name %> </span>
       <span class="date">
         <%= time_ago_in_words(review.created_at) %> ago
